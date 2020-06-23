@@ -1,21 +1,27 @@
 <template>
-    <v-app>
-        <Navigation logged-in="false"></Navigation>
+    <div id="navigation">
+        <v-app-bar app color="#13323C" dark>
+            <v-toolbar-title>Lockbook</v-toolbar-title>
 
-        <v-content>
-            <router-view />
-        </v-content>
-    </v-app>
+            <v-spacer></v-spacer>
+
+            <v-btn icon v-if="logged_in">
+                <v-icon>mdi-plus</v-icon>
+            </v-btn>
+            <v-btn icon v-on:click="toggle_dark_mode">
+                <v-icon>mdi-theme-light-dark</v-icon>
+            </v-btn>
+            <v-btn icon v-if="logged_in">
+                <v-icon>mdi-logout</v-icon>
+            </v-btn>
+        </v-app-bar>
+    </div>
 </template>
 
 <script>
-import Navigation from "./components/Navigation";
-
 export default {
-    name: "App",
-    components: {
-        Navigation
-    },
+    name: "Navigation",
+    props: ["logged_in"],
     methods: {
         toggle_dark_mode: function() {
             this.$vuetify.theme.dark = !this.$vuetify.theme.dark;

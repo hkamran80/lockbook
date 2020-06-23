@@ -1,12 +1,12 @@
 <template>
     <div class="home">
         <img alt="Vue logo" src="../assets/logo.png" />
-        <h1>Lockweb Home</h1>
+        <h1>Lockweb Account</h1>
     </div>
 </template>
 
 <script>
 export default {
-    name: "Home"
+    name: "Account"
 };
 </script>
