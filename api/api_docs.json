@@ -1,0 +1,18 @@
+{
+    "/api/v1/authorize": {
+        "authorization": false,
+        "POST": "Takes a device ID, username, and password and returns a token that is required for future authentication"
+    },
+    "/api/v1/entries": {
+        "authorization": true,
+        "GET": "Returns a list of entries",
+        "POST": "Adds an entry",
+        "UPDATE": "Updates an entry",
+        "DELETE": "Removes an entry"
+    },
+    "/api/v1/account": {
+        "authorization": true,
+        "GET": "Get account details",
+        "UPDATE": "Update account details"
+    }
+}
