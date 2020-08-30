@@ -2,9 +2,24 @@
     <v-app>
         <Navigation logged-in="false"></Navigation>
 
-        <v-content>
-            <router-view />
-        </v-content>
+        <v-main>
+            <v-container fluid>
+                <router-view />
+            </v-container>
+        </v-main>
+        <v-footer>
+            <router-link to="/">
+                Login/Register
+            </router-link>
+            <v-divider inset vertical />
+            <router-link to="/home">
+                Home
+            </router-link>
+            <v-divider inset vertical />
+            <router-link to="/account">
+                Account
+            </router-link>
+        </v-footer>
     </v-app>
 </template>
 

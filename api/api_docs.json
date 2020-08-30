@@ -1,18 +1,32 @@
 {
-    "/api/v1/authorize": {
-        "authorization": false,
-        "POST": "Takes a device ID, username, and password and returns a token that is required for future authentication"
+    "authorization": {
+        "required": true,
+        "type": "HTTP Basic"
     },
-    "/api/v1/entries": {
-        "authorization": true,
-        "GET": "Returns a list of entries",
-        "POST": "Adds an entry",
-        "UPDATE": "Updates an entry",
-        "DELETE": "Removes an entry"
-    },
-    "/api/v1/account": {
-        "authorization": true,
-        "GET": "Get account details",
-        "UPDATE": "Update account details"
+    "routes": {
+        "/api/v1/account": {
+            "GET": "Get account details",
+            "POST": {
+                "detail": "Create account",
+                "fields": [
+                    "email",
+                    "password"
+                ],
+                "authorization": false
+            },
+            "UPDATE": "Update account details"
+        },
+        "/api/v1/entries": {
+            "GET": "Returns a list of entries",
+            "POST": {
+                "detail": "Adds an entry",
+                "fields": [
+                    "date",
+                    "entry"
+                ]
+            },
+            "UPDATE": "Updates an entry",
+            "DELETE": "Removes an entry"
+        }
     }
 }
