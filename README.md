@@ -1,8 +1,8 @@
 # Lockbook
 ## A secure, open-source diary application
 
-### Help Wanted
-This project needs help regarding the encryption and decryption of user information and data.
+### Notice
+This project has been archived. Feel free to modify the source code. The replacement project is Diario.
 
 ### Development
 * Setting up the project: `npm install`
